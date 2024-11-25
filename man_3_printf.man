@@ -1,0 +1,42 @@
+NAME
+_printf - function that produces output according to a format
+
+SYNOPSIS
+#include "main.h"
+
+int _printf(const char *str, ...);
+
+DESCRIPTION
+
+- _printf() function produces output according to the format. It uses a specific function according to receipt format in order to display the result in the correct format.
+
+The available convertion specifiers are:
+
+%c: Prints a single character.
+
+%s: Prints a string of characters.
+
+%p: Prints the memory address of a pointer in hexadecimal format.
+
+%d: Prints integers.
+
+%i: Prints integers.
+
+%u: Prints unsigned integers.
+
+%o: Prints an integer with leading zeros.
+
+%%: Prints a literal percent sign (`%`).
+
+%x: Prints the hexadecial representation of an unsigned decimal in uppercase letters.
+
+%r: Prints a reversed string.
+
+RETURN
+-if successful, these functions return the number of characters printed (excluding the null byte).If the null return is unsuccessful, -1 is returned.
+
+REPORTING BUGS
+No detected so far. Please report any to jayvanramos2@gmail.com
+
+AUTHORS
+Jayvan Ramos / Angel Reyes
