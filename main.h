@@ -13,7 +13,7 @@ struct print
         char *type;
         void (*f)(va_list args);
 };
-int _printf(const char *str, ...)
+int _printf(const char *format, ...);
 void _print_chr(va_list args);
 void _print_num(va_list args);
 void _print_str(va_list args);
