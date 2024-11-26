@@ -11,7 +11,7 @@ standard output and files.
 To use the \_printf function, you need to include the main.h header file in your c 
 program and call the function as follows:
 
-\_printf(format, arguments...);
+\_printf(format, (arguments)...);
 
 # Features
 \_printf supports the following specifiers:
