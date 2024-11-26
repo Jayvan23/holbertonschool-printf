@@ -4,7 +4,14 @@ _printf - function that produces output according to a format
 SYNOPSIS
 #include "main.h"
 
-int _printf(const char *str, ...);
+int _printf(const char *str, ...)
+void _print_chr(va_list args);
+void _print_num(va_list args);
+void _print_str(va_list args);
+int _putchar(char c);
+void _print_hxs(va_list args);
+void _print_hxl(va_list args);
+void _print_oct(va_list args);
 
 DESCRIPTION
 
