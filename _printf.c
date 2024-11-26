@@ -20,11 +20,11 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(args, mod);
-	while (mod[i])
+	while (format[i])
 	{
-		if (mod[i] == '%' && mod[i + 1] != '\0')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-			if (mod[i + 1] == '%')
+			if (format[i + 1] == '%')
 			{
 				_putchar('%');
 				i++;
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				j = 0;
 				while (types[j].type)
 				{
-					if (mod[i + 1] == *types[j].type)
+					if (format[i + 1] == *types[j].type)
 					{
 						types[j].f(args);
 						i++;
@@ -46,14 +46,14 @@ int _printf(const char *format, ...)
 				}
 				if (types[j].type == NULL)
 				{
-					_putchar(mod[i]);
+					_putchar(format[i]);
 					len++;
 				}
 			}
 		}
 		else
 		{
-			_putchar(mod[i]);
+			_putchar(format[i]);
 			len++;
 		}
 		i++;
