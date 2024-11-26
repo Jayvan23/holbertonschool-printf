@@ -24,22 +24,31 @@ int _printf(char *mod, ...)
 	{
 		if (mod[i] == '%' && mod[i + 1] != '\0')
 		{
-			j = 0;
-			while (types[j].type)
+			if (mod[i + 1] == '%')
 			{
-				if (mod[i + 1] == *types[j].type)
-				{
-					types[j].f(args);
-					i++;
-					len++;
-					break;
-				}
-				j++;
-			}
-			if (types[j].type == NULL)
-			{
-				_putchar(mod[i]);
+				_putchar('%');
+				i++;
 				len++;
+			}
+			else
+			{
+				j = 0;
+				while (types[j].type)
+				{
+					if (mod[i + 1] == *types[j].type)
+					{
+						types[j].f(args);
+						i++;
+						len++;
+						break;
+					}
+					j++;
+				}
+				if (types[j].type == NULL)
+				{
+					_putchar(mod[i]);
+					len++;
+				}
 			}
 		}
 		else
