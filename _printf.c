@@ -2,11 +2,11 @@
 #include <stdarg.h>
 /**
  * _printf - Prints data to the console
- * @mod: first parameter
+ * @format: first parameter
  * @...: all parameters
  * Return: length of the output.
  */
-int _printf(char *mod, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = 0, j = 0;
