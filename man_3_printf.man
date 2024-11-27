@@ -12,6 +12,7 @@ int _putchar(char c);
 void _print_hxs(va_list args);
 void _print_hxl(va_list args);
 void _print_oct(va_list args);
+typedef struct print print_type;
 
 DESCRIPTION
 
@@ -23,21 +24,15 @@ The available convertion specifiers are:
 
 %s: Prints a string of characters.
 
-%p: Prints the memory address of a pointer in hexadecimal format.
-
 %d: Prints integers.
 
 %i: Prints integers.
-
-%u: Prints unsigned integers.
 
 %o: Prints an integer with leading zeros.
 
 %%: Prints a literal percent sign (`%`).
 
 %x: Prints the hexadecial representation of an unsigned decimal in uppercase letters.
-
-%r: Prints a reversed string.
 
 RETURN
 -if successful, these functions return the number of characters printed (excluding the null byte).If the null return is unsuccessful, -1 is returned.
