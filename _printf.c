@@ -16,6 +16,9 @@ int _printf(const char *format, ...)
 		{"s", _print_str},
 		{"d", _print_num},
 		{"i", _print_num},
+		{"X", _print_hxl},
+		{"x", _print_hxs},
+		{"o", _print_oct},
 		{NULL, NULL}
 	};
 

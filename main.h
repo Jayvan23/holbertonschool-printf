@@ -9,7 +9,7 @@
  * @f: function to execute
  */
 struct print
-(
+{
         char *type;
         void (*f)(va_list args);
 };
