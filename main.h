@@ -9,7 +9,7 @@
  * @f: function to execute
  */
 struct print
-(
+{
         char *type;
         void (*f)(va_list args);
 };
@@ -22,5 +22,4 @@ void _print_hxs(va_list args);
 void _print_hxl(va_list args);
 void _print_oct(va_list args);
 typedef struct print print_type;
-
 #endif
