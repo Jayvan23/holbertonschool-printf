@@ -16,14 +16,14 @@ program and call the function as follows:
 # Features
 \_printf supports the following specifiers:
 
--%c: Prints a single character
--%s: Prints a string of characters
--%d: Prints an integer
--%i: Prints an integer
--%x: Prints hexadecimal number format
--%X: Prints hexadecimal number format
--%o: Prints octal number format
+- %c: Prints a single character
+- %s: Prints a string of characters
+- %d: Prints an integer
+- %i: Prints an integer
+- %x: Prints hexadecimal number format
+- %X: Prints hexadecimal number format
+- %o: Prints octal number format
 
 # Authors
--[Angel Reyes](https://github.com/areyes-hub)
--[Jayvan Ramos](https://github.com/Jayvan23)
+- [Angel Reyes](https://github.com/areyes-hub)
+- [Jayvan Ramos](https://github.com/Jayvan23)
