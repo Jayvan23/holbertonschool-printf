@@ -40,5 +40,4 @@ void _print_num(va_list args)
 			_putchar(buffer[i]);
 		}
 	}
-	va_end(args);
 }

@@ -15,5 +15,4 @@ void _print_str(va_list args)
 		_putchar((char)*str);
 		str++;
 	}
-	va_end(args);
 }
