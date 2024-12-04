@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 				if (types[j].type == NULL)
 				{
 					_putchar(format[i]);
+					len++;
 				}
 			}
 		}
