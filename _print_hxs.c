@@ -35,4 +35,5 @@ void _print_hxs(va_list args)
 	{
 		_putchar(str[j]);
 	}
+	va_end(args);
 }
