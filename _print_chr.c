@@ -14,5 +14,4 @@ void _print_chr(va_list args)
 	{
 		_putchar(chr);
 	}
-	va_end(args);
 }
