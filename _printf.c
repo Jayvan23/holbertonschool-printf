@@ -9,18 +9,10 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, j = 0;
-	int len = 0;
+	int i = 0, j = 0, len = 0;
 	print_type types[] = {
-		{"c", _print_chr},
-		{"s", _print_str},
-		{"d", _print_num},
-		{"i", _print_num},
-		{"X", _print_hxl},
-		{"x", _print_hxs},
-		{"o", _print_oct},
-		{NULL, NULL}
-	};
+		{"c", _print_chr}, {"s", _print_str}, {"d", _print_num}, {"i", _print_num},
+		{"X", _print_hxl}, {"x", _print_hxs}, {"o", _print_oct}, {NULL, NULL} };
 
 	va_start(args, format);
 	while (format[i])
@@ -32,8 +24,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				i++;
 				len++;
-			}
-			else
+			} else
 			{
 				j = 0;
 				while (types[j].type)
@@ -44,8 +35,7 @@ int _printf(const char *format, ...)
 						i++;
 						len++;
 						break;
-					}
-					j++;
+					} j++;
 				}
 				if (types[j].type == NULL)
 				{
@@ -53,14 +43,11 @@ int _printf(const char *format, ...)
 					len++;
 				}
 			}
-		}
-		else
+		} else
 		{
 			_putchar(format[i]);
 			len++;
-		}
-		i++;
-	}
-	va_end(args);
+		} i++;
+	} va_end(args);
 	return (len);
 }

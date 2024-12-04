@@ -31,4 +31,5 @@ void _print_oct(va_list args)
 	{
 		_putchar(str[j]);
 	}
+	va_end(args);
 }

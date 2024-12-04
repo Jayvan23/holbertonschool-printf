@@ -12,7 +12,7 @@ void _print_str(va_list args)
 	str = va_arg(args, char *);
 	while (*str)
 	{
-		_putchar(*str);
+		_putchar((char)*str);
 		str++;
 	}
 	va_end(args);
