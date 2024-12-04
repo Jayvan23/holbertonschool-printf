@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 					{
 						types[j].f(args);
 						i++;
-						/*len++;*/
+						len++;
 						break;
 					} j++;
 				}
