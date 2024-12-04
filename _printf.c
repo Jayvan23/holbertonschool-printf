@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 		{"c", _print_chr}, {"s", _print_str}, {"d", _print_num}, {"i", _print_num},
 		{"X", _print_hxl}, {"x", _print_hxs}, {"o", _print_oct}, {NULL, NULL} };
 
+	/*printf("%d\n", len);*/
 	va_start(args, format);
 	while (format[i])
 	{
@@ -24,7 +25,8 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				i++;
 				len++;
-			} else
+			}
+			else
 			{
 				j = 0;
 				while (types[j].type)
@@ -40,14 +42,17 @@ int _printf(const char *format, ...)
 				if (types[j].type == NULL)
 				{
 					_putchar(format[i]);
-					len++;
 				}
 			}
-		} else
+		}
+		else
 		{
 			_putchar(format[i]);
 			len++;
-		} i++;
-	} va_end(args);
+		}
+		i++;
+	}
+	va_end(args);
+	/*printf("%d\n", len);*/
 	return (len);
 }
