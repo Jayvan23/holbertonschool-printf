@@ -3,15 +3,18 @@
 /**
  * _print_chr - prints a character
  * @args: argument to print
- * Return: void.
+ * Return: length of output.
  */
-void _print_chr(va_list args)
+int _print_chr(va_list args)
 {
 	int chr;
+	int len = 0;
 
 	chr = va_arg(args, int);
 	if (chr)
 	{
 		_putchar(chr);
+		len++;
 	}
+	return (len);
 }

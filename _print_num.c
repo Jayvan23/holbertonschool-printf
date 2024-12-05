@@ -4,26 +4,30 @@
 /**
  * _print_num - prints numbers
  * @args: number/s to print
- * Return: void.
+ * Return: length of output.
  */
-void _print_num(va_list args)
+int _print_num(va_list args)
 {
 	int num = va_arg(args, int);
+	int len = 0;
 
 	if (num == INT_MIN)
 	{
 		_putchar('-');
 		_putchar('2');
 		num = 147483648;
+		len = 1;
 	}
-	if (num < 0)
+	else if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
+		len = 1;
 	}
 	if (num == 0)
 	{
 		_putchar('0');
+		len = 1;
 	}
 	else
 	{
@@ -39,5 +43,7 @@ void _print_num(va_list args)
 		{
 			_putchar(buffer[i]);
 		}
+		len = 1;
 	}
+	return (len);
 }

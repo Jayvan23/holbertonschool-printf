@@ -10,16 +10,16 @@
  */
 struct print
 {
-        char *type;
-        void (*f)(va_list args);
+	char *type;
+	int (*f)(va_list args);
 };
 int _printf(const char *format, ...);
-void _print_chr(va_list args);
-void _print_num(va_list args);
-void _print_str(va_list args);
+int _print_chr(va_list args);
+int _print_num(va_list args);
+int _print_str(va_list args);
 int _putchar(char c);
-void _print_hxs(va_list args);
-void _print_hxl(va_list args);
-void _print_oct(va_list args);
+int _print_hxs(va_list args);
+int _print_hxl(va_list args);
+int _print_oct(va_list args);
 typedef struct print print_type;
 #endif
