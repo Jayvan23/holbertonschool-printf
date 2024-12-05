@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <string.h>
 /**
  * _printf - Prints data to the console
  * @format: first parameter
@@ -14,7 +15,6 @@ int _printf(const char *format, ...)
 		{"c", _print_chr}, {"s", _print_str}, {"d", _print_num}, {"i", _print_num},
 		{"X", _print_hxl}, {"x", _print_hxs}, {"o", _print_oct}, {NULL, NULL} };
 
-	/*printf("%d\n", len);*/
 	va_start(args, format);
 	while (format[i])
 	{
@@ -54,6 +54,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	/*printf("%d\n", len);*/
 	return (len);
 }
