@@ -4,18 +4,20 @@
 /**
  * _print_hxs - converts and prints from dec to hex
  * @args: number to convert
- * Return: void.
+ * Return: length of output.
  */
-void _print_hxs(va_list args)
+int _print_hxs(va_list args)
 {
 	unsigned int num = va_arg(args, int);
 	char str[32];
 	int i = 0, j;
+	int len = 0;
 
 	if (num == 0)
 	{
 		_putchar('0');
-		return;
+		len = 1;
+		return (len);
 	}
 	while (num > 0)
 	{
@@ -35,4 +37,6 @@ void _print_hxs(va_list args)
 	{
 		_putchar(str[j]);
 	}
+	len = 1;
+	return (len);
 }

@@ -23,8 +23,8 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '%')
 			{
 				_putchar('%');
-				i++;
 				len++;
+				i++;
 			}
 			else
 			{
@@ -33,11 +33,11 @@ int _printf(const char *format, ...)
 				{
 					if (format[i + 1] == *types[j].type)
 					{
-						types[j].f(args);
+						len += types[j].f(args);
 						i++;
-						len++;
 						break;
-					} j++;
+					}
+					j++;
 				}
 				if (types[j].type == NULL)
 				{
