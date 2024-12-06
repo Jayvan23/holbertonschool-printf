@@ -11,6 +11,10 @@ int _print_chr(va_list args)
 	int len = 0;
 
 	chr = va_arg(args, int);
+	if (chr == '\0')
+	{
+		return (0);
+	}
 	if (chr)
 	{
 		_putchar(chr);

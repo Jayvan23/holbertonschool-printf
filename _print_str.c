@@ -11,9 +11,9 @@ int _print_str(va_list args)
 	int len = 0;
 
 	str = va_arg(args, char *);
-	if (str == NULL)
+	if (*str == '\0')
 	{
-		str = "(null)";
+		return (0);
 	}
 	while (*str)
 	{
