@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <string.h>
+#include <stddef.h>
 /**
  * _printf - Prints data to the console
  * @format: first parameter
@@ -9,50 +10,43 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int i = 0, j = 0, len = 0;
-	print_type types[] = {
-		{"c", _print_chr}, {"s", _print_str}, {"d", _print_num}, {"i", _print_num},
-		{"X", _print_hxl}, {"x", _print_hxs}, {"o", _print_oct}, {NULL, NULL} };
-
-	va_start(args, format);
-	while (format[i])
+	if (format != NULL)
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		int count = 0, i;
+		int (*m)(va_list);
+		va_list args;
+
+		va_start(args, format);
+		i = 0;
+		if (format[0] == '%' && format[1] == '\0')
+			return (-1);
+		while (format != NULL && format[i] != '\0')
 		{
-			if (format[i + 1] == '%')
+			if (format[i] == '%')
 			{
-				_putchar('%');
-				len++;
-				i++;
+				if (format[i + 1] == '%')
+				{
+					count += _putchar(format[i]);
+					i += 2;
+				}
+				else
+				{
+					m = get_func(format[i + 1]);
+					if (m)
+						count += m(args);
+					else
+						count = _putchar(format[i]) + _putchar(format[i + 1]);
+					i += 2;
+				}
 			}
 			else
 			{
-				j = 0;
-				while (types[j].type)
-				{
-					if (format[i + 1] == *types[j].type)
-					{
-						len += types[j].f(args);
-						i++;
-						break;
-					}
-					j++;
-				}
-				if (types[j].type == NULL)
-				{
-					_putchar(format[i]);
-					len++;
-				}
+				count += _putchar(format[i]);
+				i++;
 			}
 		}
-		else
-		{
-			_putchar(format[i]);
-			len++;
-		}
-		i++;
+		va_end(args);
+		return (count);
 	}
-	va_end(args);
-	return (len);
+	return (-1);
 }

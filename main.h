@@ -10,7 +10,7 @@
  */
 struct print
 {
-	char *type;
+	char *valid;
 	int (*f)(va_list args);
 };
 int _printf(const char *format, ...);
@@ -21,5 +21,6 @@ int _putchar(char c);
 int _print_hxs(va_list args);
 int _print_hxl(va_list args);
 int _print_oct(va_list args);
-typedef struct print print_type;
+int (*get_func(char x))(va_list);
+typedef struct print spec;
 #endif
